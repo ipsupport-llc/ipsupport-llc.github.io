@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="vPSnv-ACweVU7zedD6wmncgyS5txK4xSHu5ZJ_OzHII" />
 <title>IPSupport LLC — open source</title>
-<meta name="description" content="Open source projects from IPSupport LLC: a local-first coding agent, an LLM control plane, infrastructure tooling, and more.">
+<meta name="description" content="Open source from IPSupport LLC: local AI for Mac, a coding agent, an LLM gateway, MCP connectors, and Kubernetes infrastructure.">
 <meta property="og:title" content="IPSupport LLC — open source">
-<meta property="og:description" content="Open source projects from IPSupport LLC: a local-first coding agent, an LLM control plane, infrastructure tooling, and more.">
+<meta property="og:description" content="Open source from IPSupport LLC: local AI for Mac, a coding agent, an LLM gateway, MCP connectors, and Kubernetes infrastructure.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ipsupport-llc.github.io/">
 <link rel="canonical" href="https://ipsupport-llc.github.io/">
@@ -102,8 +102,19 @@ nav.primary a:hover { color: var(--fg); }
   transition: border-color 0.2s ease, background 0.15s ease; text-decoration: none;
 }
 .repo:hover { border-color: var(--muted); background: var(--bg-elev); }
-.repo.soon { cursor: default; }
-.repo.soon:hover { border-color: var(--rule); background: var(--bg); }
+.repo { min-width: 0; }
+.repo h3 { overflow-wrap: anywhere; }
+.repo .meta { color: var(--accent); font-size: 0.75rem; }
+.repo-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-top: auto; padding-top: 1rem; font-size: 0.85rem; }
+.repo-links a { text-underline-offset: 4px; }
+.section-intro { color: var(--muted); margin-top: 1rem; max-width: 65ch; }
+.catalog-nav { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 2rem; font-size: 0.9rem; }
+.catalog-nav a { text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; padding: 0.5rem 1rem; background: var(--bg); z-index: 1; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 420px) { nav.primary { margin-left: 0; flex-wrap: wrap; } }
+@media (prefers-reduced-motion: reduce) { .repo { transition: none; } }
 .repo h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
 .repo p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 
@@ -124,6 +135,7 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site">
   <a class="brand" href="https://ipsupport.us" aria-label="ipsupport — home">
@@ -135,46 +147,151 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
   </nav>
 </header>
 
+<main id="main">
 <section class="shell hero">
-  <p class="eyebrow">IPSupport LLC</p>
-  <h1>Open source, from the team building our AI work in production.</h1>
-  <p>These are the tools and infrastructure behind <a href="https://ipsupport.us" style="text-decoration-color: var(--accent);">our client work</a> — released as we build them, not as an afterthought.</p>
+  <p class="eyebrow">IPSupport LLC / Open source</p>
+  <h1>Local AI, useful integrations, and infrastructure you control.</h1>
+  <p>Explore our public projects: from running models on your Mac to connecting assistants with your work and sharing compute across a Kubernetes cluster.</p>
+  <nav class="catalog-nav" aria-label="Project categories">
+    <a href="#oss">AI and agents</a>
+    <a href="#connectors">MCP connectors</a>
+    <a href="#infrastructure">Infrastructure</a>
+    <a href="#forks">Forks</a>
+  </nav>
 </section>
 
-<section class="shell" id="oss">
-  <p class="eyebrow">Products and public projects</p>
-  <h2>The products and tools behind our AI work.</h2>
+<section class="shell" id="oss" aria-labelledby="oss-title">
+  <p class="eyebrow">Local AI and agents</p>
+  <h2 id="oss-title">Run models. Build with them.</h2>
+  <p class="section-intro">Desktop tools and services for working with local and cloud models.</p>
   <div class="oss">
-    <a class="repo" href="https://github.com/ipsupport-llc/ipsupport-code" rel="noopener noreferrer">
-      <h3>ipsupport-code</h3>
-      <p>Local-first coding agent with a terminal UI, tool execution, workspace permissions, model switching, sub-agents, and lessons that persist between runs.</p>
-    </a>
-    <a class="repo" href="https://github.com/ipsupport-llc/ipsupport-airllm" rel="noopener noreferrer">
-      <h3>ipsupport-airllm</h3>
-      <p>Secure LLM control plane for internal agents: model policy, usage limits, routing, DLP for secrets and PII, BERT-NER sidecar, capture, audit, alert webhooks, and an admin console.</p>
-    </a>
-    <a class="repo" href="https://ipsupport-llc.github.io/llmtray/" rel="noopener noreferrer">
+    <article class="repo">
+      <p class="meta">macOS · Apple Silicon</p>
       <h3>LLMTray</h3>
-      <p>Native macOS menu bar app for running local LLMs with mlx-lm on Apple Silicon. Start and stop the server, browse and download Hugging Face models, and chat.</p>
-    </a>
-    <a class="repo" href="https://lineoneagent.com" rel="noopener noreferrer">
-      <h3>Line One Agent</h3>
-      <p>B2B voice-AI SaaS for inbound and outbound calls: multilingual AI agents, call transcription, structured outcomes, workspace management, and encrypted tenant data.</p>
-    </a>
-    <div class="repo soon">
-      <h3>sipmesh</h3>
-      <p>Kubernetes-native SIP/RTP and AI voice platform. The code is being prepared for a public release; for now we can discuss the architecture and roadmap.</p>
-    </div>
-    <a class="repo" href="https://github.com/rromenskyi/terraform-minikube-platform" rel="noopener noreferrer">
-      <h3>terraform-minikube-platform</h3>
-      <p>Multi-tenant hosting platform &mdash; Terraform-first, Cloudflare Tunnel for public ingress, shared MySQL / PostgreSQL / Redis / Ollama, single-operator by design.</p>
-    </a>
-    <a class="repo" href="https://github.com/rromenskyi/mcp-weather-simple" rel="noopener noreferrer">
-      <h3>mcp-weather-simple</h3>
-      <p>MCP tool server for weather, web search, and small utilities. The lean catalog mode delivers full functionality at -79% prompt overhead.</p>
-    </a>
+      <p>A native Mac app for local AI: chat with tools, browse and download models, generate and edit images, and create music. Serves OpenAI- and Anthropic-compatible APIs for your apps and coding agents.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/llmtray" aria-label="LLMTray on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://ipsupport-llc.github.io/llmtray/" aria-label="LLMTray website">Website <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Go · Terminal agent</p>
+      <h3>ipsupport-code</h3>
+      <p>A lightweight coding agent for local and cloud models. Plan and auto modes, workspace permissions, a built-in risk check, MCP, skills, sub-agents, and lessons saved between runs.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/ipsupport-code" aria-label="ipsupport-code on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://ipsupport-llc.github.io/ipsupport-code/" aria-label="ipsupport-code website">Website <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Go · Self-hosted gateway</p>
+      <h3>AirLLM</h3>
+      <p>Route agents to language models through one gateway, with model policies, usage limits, provider fallback, token and cost metering, prompt scanning for secrets and PII, and an admin console.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/ipsupport-airllm" aria-label="AirLLM on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://ipsupport-llc.github.io/ipsupport-airllm/" aria-label="AirLLM website">Website <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
   </div>
 </section>
+
+<section class="shell" id="connectors" aria-labelledby="connectors-title">
+  <p class="eyebrow">MCP connectors</p>
+  <h2 id="connectors-title">Connect assistants to your daily work.</h2>
+  <p class="section-intro">Tools for any MCP client on macOS, built with JavaScript for Automation and no extra runtime dependencies.</p>
+  <div class="oss">
+    <article class="repo">
+      <p class="meta">macOS · MCP</p>
+      <h3>Apple Mail, Calendar &amp; Notes</h3>
+      <p>Read, search and organize mail, prepare replies, manage calendar events, and keep notes through the apps on your Mac. Includes read-only mode and previews for supported write operations.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/apple-mail-mcp" aria-label="Apple Mail, Calendar &amp; Notes on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">macOS · MCP</p>
+      <h3>Seafile MCP</h3>
+      <p>Browse, search and organize Seafile libraries, transfer files, restore versions, and manage share links. Browser sign-in stores the token in macOS Keychain; read-only mode is available.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/seafile-mcp" aria-label="Seafile MCP on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="shell" id="infrastructure" aria-labelledby="infrastructure-title">
+  <p class="eyebrow">Infrastructure and distribution</p>
+  <h2 id="infrastructure-title">Put your own hardware to work.</h2>
+  <p class="section-intro">Kubernetes tools for shared GPUs and on-demand compute, plus packages for installing our apps.</p>
+  <div class="oss">
+    <article class="repo">
+      <p class="meta">Go · Kubernetes DRA</p>
+      <h3>dra-driver-dri</h3>
+      <p>Share GPUs between Kubernetes pods by requested VRAM. Exposes Linux DRM render nodes through CDI for Vulkan inference, including older AMD hardware without ROCm. VRAM requests guide scheduling; they are not hard memory limits.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/dra-driver-dri" aria-label="dra-driver-dri on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Go · Kubernetes autoscaling</p>
+      <h3>plugpool</h3>
+      <p>A cluster-autoscaler provider for bare-metal machines powered by ESPHome smart plugs. Boots nodes when capacity is needed and shuts them down before cutting power, with support for scaling to zero.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/plugpool" aria-label="plugpool on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Homebrew · macOS and Linux</p>
+      <h3>Homebrew tap</h3>
+      <p>Install LLMTray or LLMTray Full on Mac, and ipsupport-code (also available as ipco) on macOS and Linux. Formulae and casks track stable product releases.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/homebrew-tap" aria-label="Homebrew tap on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="shell" id="forks" aria-labelledby="forks-title">
+  <p class="eyebrow">Public forks</p>
+  <h2 id="forks-title">Our copies of upstream projects.</h2>
+  <p class="section-intro">These repositories are forks. Follow each repository for its upstream attribution and the changes in our copy.</p>
+  <div class="oss">
+    <article class="repo">
+      <p class="meta">Fork · MLX</p>
+      <h3>mlx-lm</h3>
+      <p>Text generation, quantization and fine-tuning with MLX on Apple Silicon. LLMTray runs a pinned version of this fork.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/mlx-lm" aria-label="mlx-lm on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Fork · MLX</p>
+      <h3>mlx-audio</h3>
+      <p>Speech synthesis, transcription, speech-to-speech and music generation with Apple’s MLX framework.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/mlx-audio" aria-label="mlx-audio on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Fork · MLX</p>
+      <h3>mflux</h3>
+      <p>Native MLX implementations of generative image and video models for running locally on supported hardware.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/mflux" aria-label="mflux on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Fork · Terraform</p>
+      <h3>terraform-null-label</h3>
+      <p>A reusable context module for consistent resource names, labels and tags. Pass context between modules across cloud and on-premises infrastructure.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/terraform-null-label" aria-label="terraform-null-label on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
 
 <footer class="site shell" id="contact">
   <div class="grid">
@@ -187,6 +304,7 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
     <div class="legal">
       <p>IPSupport LLC<br>7533 S CENTER VIEW CT #6055<br>WEST JORDAN, UT, 84084, USA</p>
       <p><a href="tel:+13852970034">+1 (385) 297-0034</a></p>
+      <p style="margin-top: 1rem;"><a href="https://github.com/ipsupport-llc/ipsupport-llc.github.io">Source for this site</a><br>Catalog reviewed <time datetime="2026-10-29">October 29, 2026</time></p>
       <p style="margin-top: 1rem;">&copy; 2026 IPSupport LLC</p>
     </div>
   </div>
