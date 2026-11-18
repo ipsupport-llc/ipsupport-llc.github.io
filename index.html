@@ -132,6 +132,7 @@ footer.site a.mail {
 footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--accent-d); }
 .legal { font-size: 0.8rem; color: var(--muted); }
 @media (min-width: 900px) { .legal { text-align: right; } }
+.repo code { font-size: 0.85em; overflow-wrap: anywhere; color: var(--fg); }
 </style>
 </head>
 <body>
@@ -151,7 +152,7 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
 <section class="shell hero">
   <p class="eyebrow">IPSupport LLC / Open source</p>
   <h1>Local AI, useful integrations, and infrastructure you control.</h1>
-  <p>Explore our public projects: from running models on your Mac to connecting assistants with your work and sharing compute across a Kubernetes cluster.</p>
+  <p>Explore our public projects: from running models on your Mac, Windows PC or iPhone to connecting assistants with your work and sharing compute across a Kubernetes cluster.</p>
   <nav class="catalog-nav" aria-label="Project categories">
     <a href="#oss">AI and agents</a>
     <a href="#connectors">MCP connectors</a>
@@ -163,7 +164,7 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
 <section class="shell" id="oss" aria-labelledby="oss-title">
   <p class="eyebrow">Local AI and agents</p>
   <h2 id="oss-title">Run models. Build with them.</h2>
-  <p class="section-intro">Desktop tools and services for working with local and cloud models.</p>
+  <p class="section-intro">Desktop and mobile apps and services for working with local and cloud models.</p>
   <div class="oss">
     <article class="repo">
       <p class="meta">macOS · Apple Silicon</p>
@@ -172,6 +173,24 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
       <div class="repo-links">
         <a href="https://github.com/ipsupport-llc/llmtray" aria-label="LLMTray on GitHub">GitHub <span aria-hidden="true">↗</span></a>
         <a href="https://ipsupport-llc.github.io/llmtray/" aria-label="LLMTray website">Website <span aria-hidden="true">↗</span></a>
+        <a href="https://apps.apple.com/app/id6817598741" aria-label="LLMTray in the App Store">App Store <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Windows 11 · x64 and ARM64</p>
+      <h3>LLMTray for Windows</h3>
+      <p>The Windows port of LLMTray on llama.cpp: download GGUF models from Hugging Face or Kaggle, serve them through the same OpenAI-compatible API, and chat with tools, projects and memory from the notification area.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/llmtray-windows" aria-label="LLMTray for Windows on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/ipsupport-llc/llmtray-windows/releases/latest/download/LLMTray-x64-setup.exe" aria-label="Download the LLMTray for Windows x64 installer">Download <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">iPhone · iPad</p>
+      <h3>LLMTray for iPhone and iPad</h3>
+      <p>Chat with a model, ask about a photo, or dictate a question: the model answers on the device itself, with no account and no cloud. Requires iOS 26 or later.</p>
+      <div class="repo-links">
+        <a href="https://apps.apple.com/app/id6817598741" aria-label="LLMTray for iPhone and iPad in the App Store">App Store <span aria-hidden="true">↗</span></a>
       </div>
     </article>
     <article class="repo">
@@ -246,6 +265,14 @@ footer.site a.mail:hover { color: var(--accent); text-decoration-color: var(--ac
       <p>Install LLMTray or LLMTray Full on Mac, and ipsupport-code (also available as ipco) on macOS and Linux. Formulae and casks track stable product releases.</p>
       <div class="repo-links">
         <a href="https://github.com/ipsupport-llc/homebrew-tap" aria-label="Homebrew tap on GitHub">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="repo">
+      <p class="meta">Scoop · Windows</p>
+      <h3>Scoop bucket</h3>
+      <p>Install LLMTray for Windows (the portable build) and ipsupport-code with Scoop: <code>scoop bucket add ipsupport https://github.com/ipsupport-llc/scoop-bucket</code>, then <code>scoop install ipsupport/llmtray</code>.</p>
+      <div class="repo-links">
+        <a href="https://github.com/ipsupport-llc/scoop-bucket" aria-label="Scoop bucket on GitHub">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </article>
   </div>
